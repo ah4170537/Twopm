@@ -1,694 +1,173 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Practice</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <style>
-        *{
-    padding: 0;
-    margin: 0;
-}
-header{
-    background-color: #001C30;
-    display: grid;
-    grid-template-columns: repeat(2,auto);
-    padding: 20px 10px 20px 10px;
-}
-.header{
-    color: #9ea4aa;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    justify-content: space-around;
-}
-.header > div{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    
-}
-.ab{
-    padding-left: 15px;
-    border-left: 3px solid #4c4d4f;
-}
-.header > div > p{
-    margin-left: 10px;
-    font-size: 1rem;
-}
-.header2{
-    display: flex;
-    color: #9ea4aa;
-    justify-content: center;
-    align-items: center;
-}
-.header2 p{
-    padding-right: 10px;
-}
-.header2 .ab i{
-    color: #9ea4aa;
-    padding-right: 10px;
-}
-.header2 .ab i:hover{
-    color: orangered;
-}
-nav{
-    padding: 30px 10px 30px 10px;
-    display: grid;
-    grid-template-columns: auto auto auto;
-    box-shadow: 3px 0px 3px gray ;
-    position: sticky;
-    top: 0;
-    z-index: 1;
-    background-color: white;
-}
-.nav1{
-    display: flex;
-    justify-content: center;
-}
-.nav2{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    justify-content: space-evenly;
-}
-.nav2 > a{
-    text-decoration: none;
-    font-size: 1.2rem;
-    font-weight: bolder;
-    color: rgb(67, 59, 59);
-    position: relative;
-    margin: 0px 5px 0px 5px;
-}.nav2 >a::after{
-    content: '';
-    display: block;
-    height: 3px;
-    width: 100%;
-    background-color: black;
-    transform: scaleX(0);
-    transform-origin: left;
-    transition: transform 0.3s ease;
-}
-.nav2 > a:hover{
-    color: orangered;
-    transition: all 0.3s ease;
-}
-.nav2 > a:hover::after{
-    transform: scaleX(1);
-}
-.nav3{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.a i{
-    color: rgb(67, 59, 59);
-    padding: 13px;
-    border: 3px solid rgb(67, 59, 59);
-    border-radius: 100%;
-}
-.a i:hover{
-    color: orangered;
-    transition: all 0.3s;
-    background-color: rgb(67, 59, 59);
-    border: 3px solid orangered;
-}
-.image{
-    padding-top: 70px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    padding-bottom: 30px;
-}
-.container{
-    position: relative;
-    height: 200px;
-    width: 355.55px;
-    margin: 20px;
-}
-.container img{
-    height: 200px;
-    filter: drop-shadow(10px 10px 5px grey);
-}
-.item{
-    position: absolute;
-    top: 0;
-    left: 0;
-    background-color: black;
-    height: 200px;
-    width: 355.55px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    opacity: 0.6;
-    visibility: hidden;
-    transform: scaleY(0);
-    transition: transform 0.3s ease;
-}
-.container:hover .item{
-    transform: scaleY(1);
-    visibility: visible;
-}
-.item .cd i{
-    padding: 12px;
-    border: 3px solid white;
-    color: white;
-    opacity: 0.6;
-}
-.item .cd i:hover{
-    opacity: 1;
-} 
-.button{
-    display: flex;
-    justify-content: center;
-}
-.btns p{
-    margin-left: 7px;
-}
-.btns{
-    position: relative;
-    background-color: orangered;
-    height: 30px;
-    padding: 30px 30px;
-    display: flex;
-    align-items: center;
-    font-size: 1.2rem;
-    margin-left: 20px;
-    margin-top: 10px;
-    text-decoration: none;
-    color: white;
-    transition: 0.4s all ease-in-out 0s;
-    border: 3px solid black;
-    z-index: 0;
-}
-.btns:hover{
-    color: white;
-    cursor: pointer;
-}
-.btns::before{
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    background-color: black;
-    transition: 0.4s all ease-in-out 0s;
-    z-index: -1;
-}
-.btn2::before{
-    left: 50%;
-    right: 0;
-    width: 0;
-}
-.btn2:hover::before{
-    left: 0;
-    right: unset;
-    width: 100%;
-}
-.last{
-    background:rgba(0, 0, 0, 0.9) url('https://plus.unsplash.com/premium_photo-1675131729474-f0e2ae128539?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1332&q=80');
-    width: 100%;
-    height: auto;
-    background-blend-mode: darken;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position:center;
-    margin-top: 50px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    padding-top: 80px;
-    padding-bottom: 50px;
-    z-index: -2;
-}
-.last1{
-    width: 270px;
-}
-.last1 p{
-    margin-left: 10px;
-}
-.child{
-    display: flex;
-    font-size: 0.9rem;
-    font-weight: bold;
-    color: #8d8e90;
-    margin-top: 10px;
-    align-items: center;
-}
-.childs{
-    margin-top: 10px;
-    display: flex;
-    font-size: 0.9rem;
-    font-weight: bold;
-    color: #8d8e90;
-}
-.child > div{
-    background-color: black;
-    height: 23px;
-    width: 23px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.loc{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 23px;
-    width: 31px;
-    background-color: black;
-}
-.child2{
-    color: rgba(255, 255, 255, 0.904);
-    font-weight: bold;
-    font-size: 1.1rem;
-    margin-top: 20px;
-    margin-bottom: 0;
-}
-.ch{
-    display: flex;
-    font-size: 0.9rem;
-    font-weight: bold;
-    color: #8d8e90;
-    align-items: center;
-}
-.ch > div{
-    background-color: black;
-    height: 23px;
-    width: 23px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.last2{
-    color: white;
-    font-size: 1.1rem;
-    font-weight: bold;
-    width: 250px;
-}
-.last2 p{
-    border-bottom:3px solid red;
-    display: inline-block;
-}
-.last2 > div{
-    display: flex;
-} 
-.container2{
-    position: relative;
-    height: 70px;
-    width: 70px;
-    margin:20px 0px 20px 0px ;
-}
-.container2 .img2 img{
-    height: 70px;
-    width: 70px;
-}
-.item2{
-    position: absolute;
-    top: 0;
-    left: 0;
-    background-color: black;
-    height: 70px;
-    width: 70px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    opacity: 0.6;
-    visibility: hidden;
-    transform: scaleY(0);
-    transition: transform 0.3s ease;
-}
-.container2:hover .item2{
-    visibility: visible;
-    transform: scaleY(1);
-}
-.div{
-    margin-left: 20px; 
-    margin-top: 10px;
-    margin-right: 30px;
-}
-.div a{
-    text-decoration: none;
-    font-size: 12px;
-    color: white;
-}
-.div a::after{
-    content: '';
-    display: block;
-    height: 2px;
-    width: 100%;
-    background-color: white;
-    transform: scaleX(0);
-    transform-origin: left;
-    transition: transform 0.3s ease;
-}
-.div a:hover::after{
-    transform: scaleX(1);
-}
-.div a:hover{
-    color: orangered;
-    transition: all 0.3s;
-}
-.last3{
-    color: white;
-    font-size: 1.1rem;
-    font-weight: bold;
-    width: 300px;
-}
-.last3 p{
-    margin-left: 30px;
-    border-bottom:3px solid red;
-    display: inline-block;
-    margin-bottom: 10px;
-}
-.tags{
-    display: flex;
-    width: 300px;
-    padding: 0px;
-    margin: 0;
-}
-.tagsdiv{
-    margin: 0;
-    width: 135px;
-    height: 175px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-}
-.btn{
-    position: relative;
-    background: transparent;
-    height: 30px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 0px 20px;
-    margin: 10px 0px;
-    font-size: 15px;
-    text-decoration: none;
-    color: #8d8e90;
-    border: 2px solid orangered;
-    z-index: 0;
-}
-.btn:hover{
-    color: white;
-    cursor: pointer;
-}
-.btn::before{
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    background-color: orangered;
-    transition: 0.4s all ease-in-out 0s;
-    z-index: -1;
-}
-.btn1::before{
-    left: unset;
-    right: 0;
-    width: 0;
-}
-.btn1:hover::before{
-    left: 0;
-    right: unset;
-    width: 100%;
-}
-.last4{
-    color: white;
-    font-size: 1.1rem;
-    font-weight: bold;
-    padding: 0;
-    width: 360px;
-}
-.last4 p{
-    border-bottom:3px solid red;
-    display: inline-block;
-    margin-bottom: 15px;
-}
-.last4 >div{
-    display: grid;
-    grid-template-columns: repeat(3,auto);
-    grid-template-rows: repeat(2,auto);
-}
-.container3{
-    position: relative;
-    height: 80px;
-    width: 110px;
-    margin:5px 5px 5px 5px ;
-}
-.container3 .img3 img{
-    height: 80px;
-    width: 110px;
-}
-.item3{
-    position: absolute;
-    top: 0;
-    left: 0;
-    background-color: black;
-    height: 80px;
-    width: 110px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    opacity: 0.6;
-    visibility: hidden;
-    transform: scaleY(0);
-    transition: transform 0.3s ease;
-}
-.container3:hover .item3{
-    visibility: visible;
-    transform: scaleY(1);
-}
-.item3 .cd i{
-    opacity: 0.6;
-}
-.item3 .cd i:hover{
-    opacity: 1;
-}
-footer{
-    display: flex;
-    justify-content: space-evenly;
-    padding: 25px 100px 25px 100px;
-    background-color: rgba(0, 0, 0, 0.93);
-}
-footer p{
-    color: #4c4d4f;
-    font-size: 1rem;
-    display: flex;
-}
-footer > div{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-}
-footer a{
-    text-decoration: none;
-    font-weight: bolder;
-    color: #4c4d4f;
-    position: relative;
-    margin-left: 10px;
-}
-footer a:hover{
-    color: orangered;
-   transition: all 0.3s;
-}
-footer > div a::after{
-    content: '';
-    display: block;
-    height: 3px;
-    width: 100%;
-    background-color: white;
-    transform: scaleX(0);
-    transform-origin: left;
-    transition: transform 0.3s ease;
-}
-footer >div a:hover{
-    color: orangered;
-    transition: all 0.3s ease;
-}
-footer a:hover::after{
-    transform: scaleX(1);
-}
-    </style>
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
 </head>
 <body>
-    <header>
-        <div class="header">
-            <div>
-                <i class="fa-solid fa-house" style="color: #9ea4aa;"></i>
-                <p>48 Hagart-Alexander Drive Mosigel 9024</p>
+    <header class="header">
+        <div class="header1">
+            <div class="ab" style="border-right: 2px solid #999;"><a href=""><i class="fa-solid fa-house fa-xs"></i></a>
+            <p>48 Hagart-Alexander Drive Mosigel 9024</p>
+            </div>
+            <div class="ab" style="border-right: 2px solid #999;">
+                <a href=""><i class="fa-solid fa-phone fa-xs"></i></a>
+                <p>+92-123-456789</p>
+            </div>
+            <div class="ab" style="border-right: 2px solid #999;">
+                <a href=""><i class="fa-solid fa-clock fa-xs"></i></a>
+                <p>Mon-Sat: 8am - 6pm</p>
             </div>
             <div class="ab">
-                <i class="fa-solid fa-phone" style="color: #9ea4aa;"></i>
-                <p>+123-456-789</p>
-            </div>
-            <div class="ab">
-                <i class="fa-regular fa-clock" style="color: #9ea4aa;"></i>
-                <p>Mon-Fri : 8am-6pm</p>
-            </div>
-            <div class="ab">
-                <p>NZ OWNED AND OPERATED</p>        
+               <p>NZ OWNED AND OPERATED</p>
             </div>
         </div>
         <div class="header2">
-            <p>FOLLOW US:</p>
-            <a href=""class="ab"><i class="fa-brands fa-square-facebook"></i></a>
-            <a href=""class="ab"><i class="fa-brands fa-whatsapp"></i></a>
-            <a href=""class="ab"><i class="fa-brands fa-twitter"></i></a>
-            <a href=""class="ab"><i class="fa-brands fa-pinterest"></i></a>
+            <p>Follow us :</p>
+            <a href=""><i class="fa-brands fa-facebook-f"></i></a>
+            <a href=""><i class="fa-brands fa-instagram"></i></a>
+            <a href=""><i class="fa-brands fa-twitter"></i></a>
+            <a href=""><i class="fa-brands fa-pinterest"></i></a>
         </div>
     </header>
     <nav>
-        <div class="nav1"><img src="logo-small_2x-removebg-preview.png" alt=""></div>
-        <div class="nav2">
-            <a href="">HOME</a>
-            <a href="">ABOUT US</a>
-            <a href="">OUR SERVICES</a>
-            <a href="">CAREER</a>
-            <a href="">MEDIA CENTER</a>
-            <a href="">DOWNLOADS</a>
-            <a href="">GALLERY</a>
-            <a href="">CONTACT US</a>
-        </div>
-        <div class="nav3">
-            <a href="" class="a"><i class="fa-solid fa-magnifying-glass"></i></a>
-        </div>
-    </nav>
-    <div class="image">
-        <div class="container">
-            <div class="img"><img src="img 01.png" alt=""></div>
-            <div class="item"><a href="" class="cd"><i class="fa-solid fa-magnifying-glass"></i></a></div>
-        </div>
-        <div class="container">
-            <div class="img"><img src="img 02.jpg" alt=""></div>
-            <div class="item"><a href="" class="cd"><i class="fa-solid fa-magnifying-glass"></i></a></div>
-        </div>
-        <div class="container">
-            <div class="img"><img src="img 03.jpg" alt=""></div>
-            <div class="item"><a href="" class="cd"><i class="fa-solid fa-magnifying-glass"></i></a></div>
-        </div>
-        <div class="container">
-            <div class="img"><img src="img 04.jpg" alt=""></div>
-            <div class="item"><a href="" class="cd"><i class="fa-solid fa-magnifying-glass"></i></a></div>
-        </div>
-        <div class="container">
-            <div class="img"><img src="img 05.jpg" alt=""></div>
-            <div class="item"><a href="" class="cd"><i class="fa-solid fa-magnifying-glass"></i></a></div>
-        </div>
-        <div class="container">
-            <div class="img"><img src="img 06.jpg" alt=""></div>
-            <div class="item"><a href="" class="cd"><i class="fa-solid fa-magnifying-glass"></i></a></div>
-        </div>
+        <div><img src="logo-small_2x-removebg-preview.png" alt=""></div>
+        <div class="tags">
+            <ul>
+                <li><a href="">home</a></li>
+                <li><a href="">about us</a></li>
+                <li><a href="">contact us</a></li>
+                <li><a href="">services</a></li>
+                <li><a href="">careers</a></li>
+                <li><a href="">media center</a></li>
+                <li><a href="">downloads</a></li>
+                <li><a href="">gallery</a></li>
+        </ul>
     </div>
-    <div class="button">
-        <button class="btns btn2"><i class="fa-solid fa-spinner" style="color: white;"></i> <p>LOAD MORE</p></button>
-    </div>
-    <div class="last">
-        <div class="last1">
-            <img src="logo-small_2x-removebg-preview.png" alt="">
-            <div class="childs">
-                <div class="loc"><i class="fa-solid fa-location-dot" style="color: red;"></i></div>
-                <p>48 Hagart-Alexander Drive Mosigel 9024,NEW ZEALAND</p>
-            </div>
-            <div class="child">
-                <div class="loc"><i class="fa-solid fa-phone" style="color: red;"></i></div>
-                <p>CALL US: +123-456-789</p>
-            </div>
-            <div class="child">
-                <div><i class="fa-solid fa-envelope" style="color: red;"></i></div>
-                <p>abc@example.com</p>
-            </div>
-            <div class="child2">Christchurch:</div>
-            <div class="ch">
-                <div><i class="fa-solid fa-envelope" style="color: red;"></i></div>
-                <p>abc@example.com</p>
-            </div>
-                <div class="child2">Dunedin:</div>
-            <div class="ch">
-                <div><i class="fa-solid fa-envelope" style="color: red;"></i></div>
-                <p>abc@example.com</p>
-            </div>
-            </div>
-        
-        <div class="last2">
-            <p>LINKS</p>
+`   <div class="search">
+    <a href=""><i class="fa-solid fa-magnifying-glass"></i></a>
+</div>
+
+<div class="slidebar">
+    <input type="checkbox" name="" class="slide" id="check" style=" display: none;">
+<label for="check" style="height: 20px;">
+    <div></div>
+    <div style="margin-top: 5px;"></div>
+    <div style="margin-top: 5px;"></div>
+</label>
+<div class="tags1" id="tag">
+    <ul>
+        <li><a href="">home</a></li>
+        <li><a href="">about us</a></li>
+        <li><a href="">contact us</a></li>
+        <li><a href="">services</a></li>
+        <li><a href="">careers</a></li>
+        <li><a href="">media center</a></li>
+        <li><a href="">downloads</a></li>
+        <li><a href="">gallery</a></li>
+    </ul>
+</div>
+</div>
+
+</nav>
+<div class="images">
+    <img src="img 01.png" alt="">
+    <img src="img 02.jpg" alt="">
+    <img src="img 03.jpg" alt="">
+    <img src="img 04.jpg" alt="">
+    <img src="img 05.jpg" alt="">
+    <img src="img 06.jpg" alt="">
+</div>
+
+<div style="display: flex; justify-content: center; margin-bottom: 20px;">
+    <button class="btn bt1">Load more</button>
+</div>
+<div class="content">
+        <div class="content1">
             <div>
-                <div class="container2">
-                    <div class="img2"><img src="img 07.jpg" alt=""></div>
-                    <div class="item2"><a href="" class="cd"><i class="fa-solid fa-bars" style="color: white;"></i></a></div>
-                </div>
-                <div class="div"><a href="">Vission Mission & Value</a></div>
+                <img src="logo-small_2x-removebg-preview.png" alt="" style="margin-left: 20px;">
             </div>
-            <hr>
-           <div>
-            <div class="container2">
-                <div class="img2"><img src="img 08.jpg" alt=""></div>
-                <div class="item2"><a href="" class="cd"><i class="fa-solid fa-bars" style="color: white;"></i></a></div>
+            <div class="text">
+                <p><a href=""><i class="fa-solid fa-location-dot"></i></a>
+                <span>48 Hagart-Alexander Drive Mosigel 9024,NEW ZEALAND </span></p>
             </div>
-            <div> 
-                <div class="div"><a href="">Our Clients</a></div>
+            <div class="text">
+                <p><a href=""><i class="fa-solid fa-phone"></i></a>
+               <span> CALL US: +92-123-456789 </span></p>
             </div>
-           </div>
+            <div class="text">
+                <p><a href=""><i class="fa-solid fa-envelope"></i></a>
+                <span> info@example.co.nz</span></p>
+            </div>
+            <div class="text">
+                <p class="text1">Christchurch:</p>
+                <p><a href=""><i class="fa-solid fa-envelope"></i></a>
+                    <span> info@example.co.nz</span></p>
+            </div>
+            <div class="text">
+                <p class="text1">Dunedin:</p>
+                <p><a href=""><i class="fa-solid fa-envelope"></i></a>
+                    <span> info@example.co.nz</span></p>
+            </div>
+            
+
         </div>
-        <div class="last3">
-            <p>TAGS</p>
-            <div class="tags">
-                <div class="tagsdiv">
-                    <div><a href="" class="btn btn1">Contact</a></div>
-                <div><a href="" class="btn btn1">Careers</a></div>
-                <div><a href="" class="btn btn1">Home</a></div>
-                <div><a href="" class="btn btn1">Clients</a></div>
-                </div>
-                <div class="tagsdiv">
-                    <div><a href="" class="btn btn1">Download</a></div>
-                <div><a href="" class="btn btn1">Gallery</a></div>
-                <div><a href="" class="btn btn1">Media Service</a></div>
-                <div><a href="" class="btn btn1">Services</a></div>
-                </div>
+        <div class="content2">
+            <p><span>links</span></p>
+            <div class="info1" style="border-bottom: 2px solid rgba(102, 91, 91, 0.9); padding-bottom: 20px;">
+                <img src="img 07.jpg" alt="">
+                <p><a href="#">Vissoin, Missons & values</a></p>
             </div>
+            <div class="info1">
+                <img src="img 08.jpg" alt="">
+                <p><a href="#">Our Clients</a></p>
+            </div>
+
+
         </div>
-        <div class="last4">
-            <p>GALLERY PHOTOS</p>
-            <div class="image3">
-                <div class="container3">
-                    <div class="img3"><img src="img 01.png" alt=""></div>
-                    <div class="item3"><a href="" class="cd"><i class="fa-solid fa-magnifying-glass" style="color: white;"></i></a></div>
-                </div>
-                <div class="container3">
-                    <div class="img3"><img src="img 02.jpg" alt=""></div>
-                    <div class="item3"><a href="" class="cd"><i class="fa-solid fa-magnifying-glass" style="color: white;"></i></a></div>
-                </div>
-                <div class="container3">
-                    <div class="img3"><img src="img 03.jpg" alt=""></div>
-                    <div class="item3"><a href="" class="cd"><i class="fa-solid fa-magnifying-glass" style="color: white;"></i></a></div>
-                </div>
-                <div class="container3">
-                    <div class="img3"><img src="img 04.jpg" alt=""></div>
-                    <div class="item3"><a href="" class="cd"><i class="fa-solid fa-magnifying-glass" style="color: white;"></i></a></div>
-                </div>
-                <div class="container3">
-                    <div class="img3"><img src="img 05.jpg" alt=""></div>
-                    <div class="item3"><a href="" class="cd"><i class="fa-solid fa-magnifying-glass" style="color: white;"></i></a></div>
-                </div>
-                <div class="container3">
-                    <div class="img3"><img src="img 06.jpg" alt=""></div>
-                    <div class="item3"><a href="" class="cd"><i class="fa-solid fa-magnifying-glass" style="color: white;"></i></a></div>
-                </div>
+        <div class="content3">
+            <p><span>Tags</span></p>
+            <div style="margin-top: 10px;">
+                <button class="btns btn2">Contact</button>
+                <button class="btns btn2">Download</button>
+                <button class="btns btn2">Careers</button>
+                <button class="btns btn2">Gallery</button>
+                <button class="btns btn2">Home</button>
+                <button class="btns btn2">Clients</button>
+                <button class="btns btn2">Media Center</button>
+                <button class="btns btn2">Clients</button>
             </div>
         </div>
+        <div class="content4">
+            <p><span>Gallery Photos</span></p>
+            <div style="margin-top: 20px; display: flex; flex-wrap: wrap;">
+                <img src="img 01.png" alt="">
+                <img src="img 02.jpg" alt="">
+                <img src="img 03.jpg" alt="">
+                <img src="img 04.jpg" alt="">
+                <img src="img 05.jpg" alt="">
+                <img src="img 06.jpg" alt="">
+            </div>
+
+        </div>
+        
+        
     </div>
+
+
     <footer>
-        <div><p>© QCS Otago. All Rights Reserved.</p></div>
-        <div>
-            <a href="">HOME</a>
-            <a href="">MEDIA CENTER</a>
-            <a href="">DOWNLOAD</a>
-            <a href="">GALLERY</a>
-            <a href="">CONTACT</a>
-        </div>
+        <div style="display: flex; align-items: center;"><p>© QCS Otago. All Rights Reserved.</p></div>
+       <div>
+        <a href="">home</a>
+        <a href="">about us</a>
+        <a href="">contact us</a>
+        <a href="">gallery</a>
+        <a href="">download</a>
+       </div>
     </footer>
+
 </body>
 </html>
